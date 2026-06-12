@@ -1,0 +1,54 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Cinzel:wght@600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global font and background */
+html, body, #root {
+  min-height: 100%;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: #0A0A0A; /* bg-dark */
+  color: #E5E7EB; /* text */
+}
+
+/* Headings font overrides */
+h1, h2, h3, .font-serif {
+  font-family: 'Cinzel', serif;
+}
+
+/* Glassmorphism utility */
+@layer utilities {
+  .glass {
+    @apply bg-card backdrop-blur-sm rounded-xl shadow-glass border border-white/5;
+  }
+  .glass-panel {
+    @apply bg-[#111111]/80 backdrop-blur-md rounded-2xl border border-white/10 shadow-glass;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.3);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
